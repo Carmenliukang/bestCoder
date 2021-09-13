@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "bestcoder"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+asyncio = "^3.4.3"
+fastapi = "^0.68.1"
+grpcio = "^1.40.0"
+grpcio-tools = "^1.40.0"
+protobuf = "^3.17.3"
+Flask = "^2.0.1"
+uWSGI = "^2.0.19"
+Django = "^3.2.7"
+uvicorn = "^0.15.0"
+ujson = "^4.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
