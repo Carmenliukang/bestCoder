@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import ujson
+import redis
 import asyncio
 import uvicorn
 from enum import Enum
