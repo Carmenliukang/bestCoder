@@ -11,13 +11,13 @@ import collections
 import orjson
 from blinker import signal
 from sqlalchemy import exc, event, create_engine
-from gosau.typing import SQLAlchemyEngine
+from sqlalchemy.engine.base import Engine as SQLAlchemyEngine
 from sqlalchemy.orm import UOWTransaction, sessionmaker, scoped_session
 from sqlalchemy.pool import NullPool
 from sqlalchemy.ext.asyncio import AsyncSession as _AsyncSession
 from sqlalchemy.ext.asyncio import create_async_engine, async_scoped_session
 
-from app_general.settings import DB_DSN, DB_POOL_SIZE, DB_MAX_OVERFLOW, DB_POOL_RECYCLE
+from settings import DB_DSN, DB_POOL_SIZE, DB_MAX_OVERFLOW, DB_POOL_RECYCLE
 
 engine: SQLAlchemyEngine = create_engine(
     DB_DSN,

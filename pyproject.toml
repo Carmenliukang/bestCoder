@@ -20,6 +20,12 @@ PyMySQL = "^1.0.2"
 pykafka = "^2.8.0"
 dapr = "^1.2.0"
 bitproto = "^0.4.4"
+uvloop = "^0.16.0"
+SQLAlchemy = "^1.4.23"
+orjson = "^3.6.3"
+blinker = "^1.4"
+"dogpile.cache" = "^1.1.4"
+decouple = "^0.0.7"
 
 [tool.poetry.dev-dependencies]
 

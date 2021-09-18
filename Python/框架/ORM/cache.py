@@ -10,7 +10,7 @@ from redis import Redis, ConnectionPool
 from dogpile.cache import CacheRegion, make_region
 from dogpile.cache.util import sha1_mangle_key
 
-from app_general.settings import (
+from settings import (
     REDIS_DB,
     REDIS_HOST,
     REDIS_PASS,
@@ -54,7 +54,7 @@ def _kw_generator(namespace, fn):
 
 
 def _async_creation_runner(
-    _cache: CacheRegion, key: str, creator: Callable, mutex: Any
+        _cache: CacheRegion, key: str, creator: Callable, mutex: Any
 ):
     """Used by dogpile.core:Lock when appropriate"""
 
@@ -69,7 +69,7 @@ def _async_creation_runner(
 
 
 sync_cache = make_region(
-    key_mangler=lambda key: "cache:app.general:v0_1_0:" + sha1_mangle_key(key),
+    key_mangler=lambda key: "cache:app.test:v0_1_0:" + sha1_mangle_key(key),
     function_key_generator=_kw_generator,
 ).configure(
     "dogpile.cache.redis",
@@ -87,7 +87,7 @@ sync_cache = make_region(
 )
 
 async_cache = make_region(
-    key_mangler=lambda key: "cache:app.aiyo:v0_4_6:" + sha1_mangle_key(key),
+    key_mangler=lambda key: "cache:app.test:v0_4_6:" + sha1_mangle_key(key),
     function_key_generator=_kw_generator,
     async_creation_runner=_async_creation_runner,
 ).configure(
